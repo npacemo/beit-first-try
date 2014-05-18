@@ -9,7 +9,7 @@
     "angular-cookies": "1.2.15",
     "angular-sanitize": "1.2.15",
     "angular-route": "1.2.15",
-    "less": "1.7.0",
+    "less": "~1.7.0",
     "font-awesome": "~4.1.0"
   },
   "devDependencies": {
