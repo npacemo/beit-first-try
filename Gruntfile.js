@@ -350,6 +350,7 @@ module.exports = function (grunt) {
     less: {
       default: {
         options: {
+          paths: ["<%= yeoman.app %>/styles"],
           compress: false,
         },
         files: {

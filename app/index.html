@@ -24,7 +24,32 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    <div class="pointer-events-blocker" ng-class="{ 'active': pointerEventsBlocked }"></div>    
+
+    <div class="root-halo-holder menu-sidebar-shown"
+      ng-class="{ 'menu-sidebar-shown': menuSidebarShown }">
+      <div class="app-header sidebar-pushed">
+        <div class="icon header-menu-sidebar-expand-button fa fa-bars fa-1g"
+          jqm-tap="changeSidebarVisibility('menu', !menuSidebarShown)"></div>
+      </div>
+      <div class="sidebar menu-sidebar">
+        <div class="side-menu">
+          <div class="nav">
+            <a ng-href="#"><i class="fa fa-home fa-fw"></i><span class="nav-label">Home</span></a>
+            <a ng-href="#"><i class="fa fa-info fa-fw"></i><span class="nav-label">About</span></a>
+            <a ng-href="#"><i class="fa fa-envelope fa-fw"></i><span class="nav-label">Contact</span></a>
+            <a ng-href="#"><i class="fa fa-user fa-fw"></i><span class="nav-label">Profile</span></a>
+            <a ng-href="#"><i class="fa fa-cog fa-fw"></i><span class="nav-label">Settings</span></a>
+            <a ng-href="#"><i class="fa fa-sign-out fa-fw"></i><span class="nav-label">Logout</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="interaction-blocker sidebar-pushed" jqm-vmousedown="hideSidebars()"></div>
+    </div>
+
+    <div class="container-wrapper">
+      <div class="container" ng-view=""></div>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
