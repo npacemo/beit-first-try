@@ -7,7 +7,8 @@
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <!--<meta name="viewport" content="width=device-width">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
@@ -18,7 +19,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="firstTryApp">
+  <body ng-app="firstTryApp" ng-controller="RootCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -30,7 +31,7 @@
       ng-class="{ 'menu-sidebar-shown': menuSidebarShown }">
       <div class="app-header sidebar-pushed">
         <div class="icon header-menu-sidebar-expand-button fa fa-bars fa-1g"
-          jqm-tap="changeSidebarVisibility('menu', !menuSidebarShown)"></div>
+          ng-click="showSidebarMenu(!menuSidebarShown)"></div>
       </div>
       <div class="sidebar menu-sidebar">
         <div class="side-menu">
@@ -43,8 +44,9 @@
             <a ng-href="#"><i class="fa fa-sign-out fa-fw"></i><span class="nav-label">Logout</span></a>
           </div>
         </div>
+        <div class="side-menu-shadow"></div>
       </div>
-      <div class="interaction-blocker sidebar-pushed" jqm-vmousedown="hideSidebars()"></div>
+      <div class="interaction-blocker sidebar-pushed" ng-click="hideSidebarMenu()"></div>
     </div>
 
     <div class="container-wrapper">
@@ -69,18 +71,21 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/less/dist/less-1.7.0.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/root.js"></script>
         <!-- endbuild -->
 </body>
 </html>
