@@ -18,6 +18,18 @@
 
 @main-font-family: Helvetica, Arial, sans-serif;
 
+/* mixins */
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 /* root components */
 
 .app-header {
@@ -40,6 +52,30 @@
     height: 0.8em;
     padding: 0.1em 0em 0em 0.3em;
     float: left;
+  }
+
+  .search-container {
+    height: @header-height;
+    position: absolute;
+    right: 0;
+
+    input {
+      width: 160px;
+      height: @header-height - 2*10px;
+      margin-right: 12px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 11px;
+      padding-left: 24px;
+      color: #555;
+    }
+
+    .icon {
+      position: absolute;
+      left: 4px;
+      top: 10px;
+      color: #555;
+    }
   }
 }
 
@@ -173,4 +209,36 @@ body {
 }
 * {
   .reset-box-sizing(content-box);
+}
+
+/* photo component */
+.photo-container {
+  width: 100%;
+  padding-bottom: 20px;
+
+  .photo {
+    display: block;
+    text-align: center;
+    width: 280px;
+    height: 186px;
+    background-color: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    padding: 6px;
+  }
+
+  .tags-container {
+    padding-top: 8px;
+    .clearfix;
+
+    .tag {
+      float: left;
+      padding: 4px;
+      background-color: #555; 
+      color: #fff;
+      font-size: 12px;
+      margin-right: 4px;
+      margin-bottom: 4px;
+      border-radius: 3px;
+    }
+  }
 }
