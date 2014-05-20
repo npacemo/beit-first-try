@@ -11,7 +11,7 @@
 
 @container-padding: 10px;
 @content-width: @container-width - 2 * @container-padding;
-@header-height: 52px;
+@header-height: 42px;
 @root-font-size: 16px;
 @base-padding: 10px;
 @side-menu-padding: 5px;
@@ -19,20 +19,6 @@
 @main-font-family: Helvetica, Arial, sans-serif;
 
 /* root components */
-
-.pointer-events-blocker {
-  position: fixed;
-  z-index: 10000;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  display: none;
-  
-  &.active {
-    display: block;
-  }
-}
 
 .app-header {
   position: fixed;
@@ -130,6 +116,10 @@
 
   .sidebar-pushed {
     transform: translate3d(80%, 0, 0);
+  }
+
+  .interaction-blocker {
+    display: block;
   }
 }
 

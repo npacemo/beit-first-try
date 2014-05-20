@@ -11,8 +11,8 @@
     "angular-route": "1.2.16",
     "less": "~1.7.0",
     "font-awesome": "~4.1.0",
-    "angular-touch": "~1.2.16",
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "angular-jqm-events": "~0.0.4"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",

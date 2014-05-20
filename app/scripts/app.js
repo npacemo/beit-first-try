@@ -6,7 +6,7 @@ angular
     'ngResource',
     'ngSanitize',
     'ngRoute',
-    'ngTouch'
+    'jqmEvents'
   ])
   .config(function ($routeProvider) {
     $routeProvider

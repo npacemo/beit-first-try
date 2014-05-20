@@ -13,6 +13,7 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/jquery-mobile-bower/css/jquery.mobile-1.4.2.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
@@ -25,15 +26,13 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="pointer-events-blocker" ng-class="{ 'active': pointerEventsBlocked }"></div>    
-
     <div class="root-halo-holder"
       ng-class="{ 'menu-sidebar-shown': menuSidebarShown }">
       <div class="app-header sidebar-pushed">
         <div class="icon header-menu-sidebar-expand-button fa fa-bars fa-1g"
-          ng-click="showSidebarMenu(!menuSidebarShown)"></div>
+          jqm-tap="showSidebarMenu(!menuSidebarShown)"></div>
       </div>
-      <div class="sidebar menu-sidebar">
+      <div class="sidebar menu-sidebar" jqm-vmousemove="preventDefaultEvent($event)"> 
         <div class="side-menu">
           <div class="nav">
             <a ng-href="#"><i class="fa fa-home fa-fw"></i><span class="nav-label">Home</span></a>
@@ -46,7 +45,8 @@
         </div>
         <div class="side-menu-shadow"></div>
       </div>
-      <div class="interaction-blocker sidebar-pushed" ng-click="hideSidebarMenu()"></div>
+      <div class="interaction-blocker sidebar-pushed" jqm-vmousedown="hideSidebarMenu()"
+        jqm-vmousemove="preventDefaultEvent($event)"></div>
     </div>
 
     <div class="container-wrapper">
@@ -69,16 +69,21 @@
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/jquery-mobile-config-noauto/jqm-config-noauto.js"></script>
+
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/less/dist/less-1.7.0.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/hammerjs/hammer.js"></script>
+    <script src="bower_components/angular-hammer/angular-hammer.js"></script>
+    <script src="bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.2.js"></script>
+    <script src="bower_components/angular-jqm-events/jqm-events.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

@@ -24,4 +24,8 @@ angular.module('firstTryApp')
         containerWrapper.css("transform", "");
       }
     };
+
+    $scope.preventDefaultEvent = function(event) {
+      event.preventDefault();
+    };
   });
