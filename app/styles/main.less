@@ -53,30 +53,6 @@
     padding: 0.1em 0em 0em 0.3em;
     float: left;
   }
-
-  .search-container {
-    height: @header-height;
-    position: absolute;
-    right: 0;
-
-    input {
-      width: 160px;
-      height: @header-height - 2*10px;
-      margin-right: 12px;
-      margin-top: 8px;
-      border: none;
-      border-radius: 11px;
-      padding-left: 24px;
-      color: #555;
-    }
-
-    .icon {
-      position: absolute;
-      left: 4px;
-      top: 10px;
-      color: #555;
-    }
-  }
 }
 
 .sidebar {
@@ -85,7 +61,7 @@
   z-index: 1000;
   top: 0;
   bottom: 0;
-  background-color: #ffffff;
+  background-color: #fff;
   display: block;
   transition: transform 400ms ease;
   
@@ -108,12 +84,16 @@
         display: block;
         height: 52px;
         line-height: 52px;
-        color: #333333;
+        color: #333;
         font-size: 24px;
         text-decoration: none;
 
         .nav-label {
           padding-left: 10px;
+        }
+
+        &.active {
+          background-color: #fff;
         }
       }
     }
@@ -240,5 +220,43 @@ body {
       margin-bottom: 4px;
       border-radius: 3px;
     }
+  }
+}
+
+.spacer {
+  display: block;
+  width: 100%;
+  height: @header-height;
+}
+
+.search-container {
+  height: @header-height;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: -10px;
+  text-align: center;
+  background-color: #999;
+
+  input {
+    width: 260px;
+    height: @header-height - 2*10px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 11px;
+    padding-left: 24px;
+    color: #555;
+    user-select: text;
+  }
+
+  .icon {
+    position: absolute;
+    left: 22px;
+    top: 0;
+    font-size: @header-height * 0.4;
+    height: 0.4em;
+    padding-top: 0.7em;
+    color: #555;
   }
 }
