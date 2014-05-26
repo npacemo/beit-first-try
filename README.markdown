@@ -1,26 +1,26 @@
-# Install Node.js and npm via Homebrew
+## Install Node.js and npm via Homebrew
 
     brew install node
 
-# Install yeoman, bower and grunt
+## Install yeoman, bower and grunt
 
     npm install -g yo
 
-# Install AngularJS yeoman generator
+## Install AngularJS yeoman generator
 
     npm install -g generator-angular
 
-# Scaffold an AngularJS app
+## Scaffold an AngularJS app
 
     mkdir first-try
     cd first-try
     yo angular
 
-# Use LESS instead of Sass
+## Use LESS instead of Sass
 
     npm install grunt-contrib-less --save-dev
 
-# Update your **Gruntfile.js** accordingly to execute the LESS compiler:
+## Update your **Gruntfile.js** accordingly to execute the LESS compiler:
 
     watch: {
       ...
@@ -91,13 +91,13 @@ Install the *less.js* dependency though bower:
 
 Now, running `grunt serve` will start a web server that automatically reloads the browser when a modification is done on any of the *less* files in the *styles* directory.
 
-# Install Font Awesome
+## Install Font Awesome
 
     bower install font-awesome --save
 
-# Working on the actual application
+## Working on the actual application
 
-## Styles & Layout
+### Styles & Layout
 
 First, we'll need to add some initial containers and structure in the *index.html*.
 
@@ -107,13 +107,13 @@ Then, we'll start modifying the *main.less* by:
 2. Add some media queries and sizing variables.
 3. Add the styles for the root components.
 
-## Sidebar menu
+### Sidebar menu
 
 1. Create the content of the sidebar using simple `div` and `a` elements.
 2. Add some simple sidebar menu styling.
 3. Test the sidebar menu.
 
-## Write some code to toggle the side menu
+### Write some code to toggle the side menu
 
 Before writing the code we need to install *angular-touch*:
 
@@ -159,7 +159,7 @@ Add the controller logic and you should get to the point referred by [commit 31f
 
 The controller will use *jquery*, so run `bower install jquery --save` and then `grunt build` again.
 
-## Fixing the bugs with the sidebar navigation
+### Fixing the bugs with the sidebar navigation
 
 At this point you should have a working interaction and you should notice there's a bug on mobile where at the end of the transition the whole application scales down. The fix for that is to disable the automatic zooming by changing the default `<meta name="viewport" content="width=device-width">` with `<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui" />`.
 
@@ -197,8 +197,5 @@ and once again on the `sidebar`:
 Now clean-up the no longer user `angular-hammer` module.
 
     bower uninstall angular-hammer --save
-
-
-
 
 ## Demonstrate the Angular Model, Repeater and Filter
