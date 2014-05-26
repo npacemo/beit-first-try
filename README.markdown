@@ -107,16 +107,11 @@ Then, we'll start modifying the *main.less* by:
 2. Add some media queries and sizing variables.
 3. Add the styles for the root components.
 
-
-
-
-
-
 ## Sidebar menu
 
 1. Create the content of the sidebar using simple `div` and `a` elements.
-1. Add some simple sidebar menu styling.
-1. Test the sidebar menu.
+2. Add some simple sidebar menu styling.
+3. Test the sidebar menu.
 
 ## Write some code to toggle the side menu
 
@@ -132,7 +127,7 @@ Create a root controller:
 
     yo angular:controller root
 
-Add the controller logic:
+Add the controller logic and you should get to the point referred by [commit 31fcb](https://github.com/npacemo/beit-first-try/commit/d31fcb "Add sidebar menu interaction"):
 
     'use strict';
     
@@ -202,5 +197,8 @@ and once again on the `sidebar`:
 Now clean-up the no longer user `angular-hammer` module.
 
     bower uninstall angular-hammer --save
+
+
+
 
 ## Demonstrate the Angular Model, Repeater and Filter
